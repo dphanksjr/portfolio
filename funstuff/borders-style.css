@@ -1,0 +1,54 @@
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.fjalla {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.container {
+    border: 40px solid black;
+    padding: 15px;
+    width: 15%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    border-image: url(border.png) 33% round;
+    
+
+}
+.container2 {
+    border: 40px solid black;
+    padding: 15px;
+    width: 15%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    border-image: url(border2.png) 33% round;
+    
+
+}
+.container3 {
+    border: 40px solid black;
+    padding: 15px;
+    width: 15%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    border-image: url(comic1.jpg) 33% round;
+    
+
+}
+.container4 {
+    border: 40px solid black;
+    padding: 15px;
+    width: 15%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    border-image: url(border3.png) 33% round;
+
+}

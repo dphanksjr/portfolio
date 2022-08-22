@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fjalla One', sans-serif;
+}
+.fjalla {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.button-menu {
+    margin: 30px;
+    width: 160px;
+    height: 60px;
+    border: 1px solid black;
+    position: relative;
+
+}
+.button-menu p {
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+    position: relative;
+    transition: .8s;
+    z-index: 10;
+}
+.button-menu span {
+    color: transparent;
+    position: relative;
+}
+.button-menu span::before {
+    content: 'H';
+    position: absolute;
+    width: auto;
+    height: 60px;
+    color: black;
+    transition: .2s ease-out;
+}
+
+.button-menu:nth-of-type(2) span::before{
+    content: 'P';
+}
+.button-menu:nth-of-type(3) span::before{
+    content: 'A';
+}
+.button-menu:nth-of-type(4) span::before{
+    content: 'C';
+}
+.button-menu::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    transition: .8s;
+    z-index: 1;
+}
+.button-menu:hover::after{
+    background-color:rgba(0,0,0,0);
+    transform: rotate(10deg);
+}
+.button-menu:hover p {
+    color:white;
+    background-color: black;
+}
+.button-menu:hover span::before{
+    color: white;
+    transform: translate(-65%, -10%) rotate(360deg);
+    font-size: 55px;
+
+}

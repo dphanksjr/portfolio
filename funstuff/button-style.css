@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.fjalla {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.button-anim {
+    width: 160px;
+    height: 60px;
+    position: relative;
+    border-left: 1px solid black;
+    margin-bottom: 10px;
+    transition: .5s;
+    margin-right:25px;
+}
+
+.button-anim::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    transition: .5s;;
+}
+.button-anim:hover::before {
+    width: 100px;
+    left:60px;
+}
+.button-anim:hover {
+    border-left: 1px solid rgba(0,0,0,0);
+}
+.button-anim span {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    transition: .5s;
+}
+.button-anim:hover span{
+    left: 100px
+}
+.svg-anim {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(0, -50%);
+    stroke: black;
+    fill:transparent;
+    stroke-width: 10;
+    width: 70px; height: 70px;
+    stroke-dasharray: 4000;
+    transition: .9s ease-out;
+    stroke-dashoffset: -4000;
+
+}
+.button-anim:hover svg{
+    stroke-dashoffset: 0;
+}
+.margin-bottom{
+    margin-bottom: 10px;
+}
