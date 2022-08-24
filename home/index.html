@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="liquid-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+#video-container {
+    top:0%;
+    left:0%;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+
+}
+video#bgVid {
+    position:absolute;
+    z-index:-1;
+    /*background: url('http://ewallpaperhub.com/wp-content/uploads/2015/01/nature-wallpaper-3.jpg') no-repeat;*/
+    background-size: cover;
+    transition: 1s opacity;
+}
+video#bgVid.fillWidth {
+    width: 100%;
+   position:relative
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto
+}
+.navbar {
+  width:100%;
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid black;
+}
+.logo{
+  width: 80px;
+  float:left;
+}
+.navigation{
+ background:rgba(0,0,0,.6);
+  padding-top:30px;
+  padding-bottom:30px;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:1;
+}
+
+.navbar-right{
+  float:right;
+  padding-right:10%;
+}
+
+.navbar-right a{
+  text-decoration:none;
+  padding:10px;
+  color: #fff;
+  font-family:Arial;
+  font-weight:900;
+}
+
+.navbar-right a:hover{
+  text-decoration:underline;
+}
+.navbar-logo{
+  padding-left:10%;
+  font-family:Arial;
+  font-size:30px;
+  font-weight:bold;
+  text-decoration:none;
+  color:#fff; 
+}
+body{
+  margin: 0;
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+main a{
+  color:black;
+  text-decoration: underline;
+}
+
+main{
+  color:black !important;
+}
+
+main a:hover {
+  text-decoration: none;
+  background:black;
+  color:white;
+}
+.flex-item{
+  border: 1px solid black;
+  width:100%;
+  margin-right:50px;
+  margin-bottom:50px;
+  list-style:none;
+}
+.flex-item-25{
+
+  border: 1px solid black;
+  width:25%;
+  
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+  height:490px;
+  padding: 0 10px;
+}
+
+.column-lg {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+}
+.card-lg {
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+}
+.card-lg h1 {
+ 
+  text-align: left;
+
+}
+.card h1{
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+.footer {
+  background: black;
+  color:white;
+  height:100px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top:5%;
+}
+.lg-font {
+  font-size: 18px;
+}
+.portfolio-card a{
+  text-decoration: none;
+  background: black;
+  color:white;
+}
+.portfolio-card a:hover{
+  color:black;
+  background:lightgray;
+  border: 4px dotted black;
+}
+</style>
+
+</head>
+    <body>
+      
+      <nav class="navigation">
+        <a href="#" class="navbar-logo">Daniel Hanks Jr</a>
+        <div class="navbar-right">
+          <a href="#about">About</a>
+          <!--<a href="#">Experience</a>
+          <a href="#">Education</a>
+          <a href="#">Skills</a>-->
+          <a href="#portfolio">Portfolio</a>
+          <a href="#projects">Projects</a>
+          <a href="#games">Games & Fun </a>
+        </div>
+      </nav>
+        
+      <div id="video-container">
+          <video id="bgVid" loop class="fillWidth" controls muted autoplay>
+            <source src="portfolio.mp4" type="video/mp4">
+          </video> 
+        </div>
+
+      <main style="color:#000;margin-left:10%;margin-right:10%;margin-top:50px;">
+        <div id="flex-wrap underneath">
+          
+          
+          <div class="row">
+            <div class="column">
+              <div class="card" style="height:420px;">
+                <h1><a id="projects"><b>Projects</b></a></h1>  
+                <p></p>
+                <p><a href="https://dphanksjr.github.io/main/datascience.html">Data Science Projects</a></p>
+                <p><a href="https://dphanksjr.github.io/main/recent_projects/">Recent Projects</a></p>
+                <p>More projects will be added soon...</p>
+               <p class='portfolio-card'> <a href="https://dphanksjr.github.io/portfolio/#projects">Check out all my projects here...</a></p>
+              </div>
+            </div>
+          
+            <div class="column">
+              <div class="card" style="height:420px;">
+                <h1 ><a id="portfolio"><b>Portfolio</b></a></h1>
+                <p>This is a list of sites I've built and/or am currently maintaing:</p>
+                <p><a href="https://library.syracuse.edu/">SU Library website</a></p>
+                <p><a href="https://soundbeat.org/">Sound Beat</a></p>
+                <p><a href="">SU Library Materials Website</a></p>
+                <p><a href="https://digitalexhibits.syr.edu/studentstrike/">Shut It Down: The 1970 Student Strike at Syracuse University</a></p>
+                <p><a href="https://breuer.syr.edu/">Marcel Breuer Digital Archive</a></p>
+                <p><a href="https://plastics.syr.edu/">The Plastics Collection</a></p>
+                <p class='portfolio-card'><a href="https://dphanksjr.github.io/portfolio/#portfolio">Check out my other portfolio page for screenshots and other links...</a></p>
+              
+              
+              
+              </div>
+            </div>
+            
+            <div class="column">
+              <div class="card lg-font" style="height:420px;">
+                <h1 ><a id="games"><b>Games & Fun Stuff</b></a></h1> 
+                Fun with CSS:  <a href="/funstuff/index.html"> CSS Fun </a>
+                          <br> Time Wasters: <a href="https://dphanksjr.github.io/main/games/quickBlocks/"> Quick Blocks </a> · <a href="https://dphanksjr.github.io/main/games/fall/">Celestial Stars</a> · <a href="https://dphanksjr.github.io/main/games/arrows/"> Castle Siege </a>
+                           <br>Educational: <a href="https://dphanksjr.github.io/main/games/math/">Math Quiz</a> · <a href="https://dphanksjr.github.io/main/games/spanish/">Spanish Quiz </a> · <a href="https://dphanksjr.github.io/main/games/questions/">Language Quiz</a>
+                          <br>Game Animation: <a href="/games/animation/index.html">Animation Demo</a>
+                          <br>Parallel Scrolling Test: <a href="/games/parallel/index.html">Parallel Scrolling Demo</a>
+                          <br>Simple Shooter: <a href="/games/shootergame/index.html">Simple Shooter: Just use the mouse to shoot the crows</a>
+                          <p class='portfolio-card'> <a href="https://dphanksjr.github.io/portfolio/#games">Check out my page of fun...</a></p>
+              </div>
+            </div>
+            
+
+          </div>
+          <div class="row" style="margin-top:0px;">
+            <div class="column-lg">
+              <div class="card-lg">
+                <h1 class="card-lg" ><a id="about"><b>About Me</b></a></h1>  
+                <p>I consider myself an experienced IT professional with a broad knowledge of hardware, software, and networking technologies. I'm proficient in database design and development, software design, programming and debugging. I'm also experienced in teaching classes and training a variety of people in various settings. I've also aquired quite a bit of Data Science experience extracting and analyzing data, turning it into useful information and then visualizing it.</p>
+
+                <p>My daily duties in my current and previous positions include designing, building and maintaining websites, overseeing day-to-day maintenance of existing sites, along with testing and implementing fixes for these sites. All current sites I deal with now also must be accessible according to current W3C standards. The bulk of my work for the last 7+ years has been utilizing WordPress, PHP, HTML, CSS and Javascript. Data Science work includes several years utilizing Python and R. I'm currently working in and converting websites to a Django/Wagtail framework.</p>
+       
+                <p>My hobbies include gaming, some light game development, watching Sci-fi and Dystopian movies and also watching Pittsburgh sports.</p>
+               
+               <p class='portfolio-card'> <a href="https://dphanksjr.github.io/portfolio/">Check out my more formal portfolio here...</a></p>
+              </div>
+            </div>
+          </div>
+          
+          
+      
+
+
+      </main>  
+      <footer class="footer">
+        <p></p>
+      </footer>
+              
+              
+              
+              
+              
+              
+              
+              <script>
+              var video = document.getElementById("myVideo");
+              var btn = document.getElementById("myBtn");
+              
+              function myFunction() {
+                if (video.paused) {
+                  video.play();
+                  btn.innerHTML = "Pause";
+                } else {
+                  video.pause();
+                  btn.innerHTML = "Play";
+                }
+              }
+              </script>
+       
+    </body>
+</html>
+    
