@@ -239,9 +239,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Source Code Pro", monospace}
   left: 31px;
   }
 
- body {
-  padding:5%;
- }
+  body{
+    overflow-x: hidden;
+  }
+  h4, p{
+     margin-left:5px;
+  }
+  #myBtnContainer{
+    margin-left:5px;
+
+  }
+  .row{
+    margin-left:5px;
+  }
+  #tv_container{
+    margin-right:5px;
+  }
+.w3-grey{
+  margin-left:10px;
+  margin-right:10px;
+}
  code, kbd, pre, samp {
     font-family: monospace,monospace;
     font-size: .8em;
@@ -298,7 +315,7 @@ left:0px !important;
 
 </style>
 
-<body class="w3-light-grey w3-content" style="max-width:1600px" onload="start();" >
+<body id="main" style="max-width: 1600px;" class="w3-light-grey w3-content" onload="start();" >
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:280px;" id="mySidebar"><br>
