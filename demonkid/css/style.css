@@ -27,7 +27,7 @@ body, html {
   }
   .parallax {
     /* The image used */
-    background-image: url('/img/env/1_game_background.png');
+    background-image: url('../img/env/1_game_background.png');
   
     /* Full height */
     height: 60%; 
