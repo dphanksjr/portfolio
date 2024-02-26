@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" /> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/mobile.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  padding:0;
+  margin:0;
+  min-width: 1024px;
+}
+.creepster-regular {
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.creepster-66 {
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 66px !important;
+}
+
+#headerGrad {
+  width: 100%;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(darkred, black);
+}
+
+.nav {
+    background-color: red;
+    padding:1px;
+}
+.parallax {
+  /* The image used */
+  background-image: url('img/story/tree.PNG');
+
+  /* Full height */
+  height: 60%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: middle;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax2 {
+  /* The image used */
+  background-image: url('dk_bg1.png');
+
+  /* Full height */
+  height: 50%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax3 {
+  /* The image used */
+  background-image: url('pumpkin.png');
+
+  /* Full height */
+  height: 60%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+}
+.container2 {
+  position: relative;
+}
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+  color:white;
+}
+.bottomCenter {
+  position: absolute;
+  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color:black;
+ 
+}
+.topCenter {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color:black;
+ 
+}
+#demo {
+  border: 1px solid black;
+    position: absolute;
+  top: 70%;
+  left: -90%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  background-color: black;
+  color:white !important;
+  font-weight: 800;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:100px;
+  padding-right:5px;
+  opacity:.7;
+  width:900px;
+
+}
+#dkFly {
+  width: 250px;
+  height: 300px;
+ /* background: red;*/
+  background-image: url('run.png');
+  background-repeat: none;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+@keyframes example {
+  from {left: 0px;}
+  to {left: 200px; background-image: url('run.png');}
+}
+
+#move {
+ 
+  
+  color:white;
+ /* background-image: url('run.png');*/
+  background-repeat: none;
+  position: relative;
+  animation-name: move;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+  border:1px groove grey;
+}
+@keyframes move {
+  from {left:-200px;}
+  to {left: 20px; }
+}
+#move-right {
+  
+  
+  color:white;
+ /* background-image: url('run.png');*/
+  background-repeat: none;
+  position: relative;
+  animation-name: move-right;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+  animation-direction: backwards;
+  border:1px groove grey;
+
+}
+@keyframes move-right {
+  from {right: -200px;}
+  to {right: 20px; }
+}
+video {
+  max-width: 100%;
+  height: auto;
+}
+.flex-container {
+  display: flex;
+  background-color: red;
+  border-top: solid black 1px;
+
+
+ /* justify-content: center;
+  align-items: center;*/
+
+}
+.flex-container-no {
+  display: flex;
+
+
+}
+.center-everything {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container > div {
+  margin: 10px;
+  text-align: center;
+  justify-content: center;
+ 
+}
+.flex-grid {
+  display: flex;
+}
+.flex-grid .col {
+  flex: 1;
+}
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+.flex-grid { 
+  margin: 0 0 20px 0;
+}
+.col {
+  padding: 20px;
+}
+#green1{
+  position: absolute;
+  top: 10%;
+  left:0;
+  border-radius:0px 12px 12px 0px;
+
+  
+}
+#green2{
+  position: absolute;
+  top: 50%;
+  right:0;
+  border-radius:12px 0px 0px 12px;
+
+ 
+}
+.footer {
+    background-color: black;
+    color:white;
+    height:200px;
+}
+
+#grad1 {
+ 
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(red, black);
+}
+#grad2 {
+ 
+ background-color: red; /* For browsers that do not support gradients */
+ background-image: linear-gradient(black, green);
+}
+#grad3 {
+ height:100px;
+ background-color: red; /* For browsers that do not support gradients */
+ background-image: linear-gradient(brown, black);
+}
+#grad4 {
+ height:250px;
+ background-color: red; /* For browsers that do not support gradients */
+ background-image: linear-gradient(red, white);
+}
+
+.center {
+  margin: auto;
+  width: 50% !important;
+  padding: 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size:36px;
+  font-weight: bold;
+ 
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+.aboutBtn {
+    font-weight: 600;
+    fill: var( --e-global-color-860a4a1 );
+    color: var( --e-global-color-860a4a1 );
+    background-color: #FFFFFFA3;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: var( --e-global-color-1f862d6 );
+    border-radius: 30px 30px 30px 30px;
+    padding: 10px 20px 10px 20px;
+    height:40px;
+}
+.header {
+  text-align: center;
+  padding: 2px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+.hr-line-primary{
+  width:100%;
+  margin:0;
+  height: 80px;
+  border:none;
+  color:transparent;
+  overflow:hidden;
+  max-width:1280px;
+  margin:auto;
+  background: url('img/skeleton_run_00.svg') no-repeat center;
+  display:flex;
+  align-items:center;
+}
+.hr-line-primary:before{
+  content:"";
+  flex:1 0 100%;
+  height:2px;
+  background:linear-gradient(to right, #000 calc(50% - 30px), transparent calc(50% - 30px),transparent calc(50% + 30px), #000 calc(50% + 30px));
+}
+
+.enemy-flex-container {
+  max-width:1280px;
+  display: flex;
+  flex-direction: row;
+}
+.enemy-flex-item {
+  flex: 33.33%;
+}
+.story-flex-item {
+  flex: 50%;
+}
+.padding-right-100 {
+  padding-right: 100px;
+  padding-bottom:100px;
+}
+.story {
+  max-width:1280px;
+  display: flex;
+  flex-direction: row;
+  border: solid black 1px;
+}
+.story-flex-style {
+  line-height: 1.6em;
+}
+@media (max-width: 400px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .enemy-flex-container {
+    flex-direction: column;
+  }
+}
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+  <nav id="headerGrad" class="nav" style="background-color: red;">   
+    <div><img id="logo" src="logo.png" style="margin-left:25%;padding-top:10px;" /></div>
+    <div style="color:white;float:right;margin-right:30%;margin-top:-75px;">
+      <ul id="header-nav" class="creepster-regular" style="list-style: none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="enemies.html">Enemies</a></li>
+        <li><a href="environments.html">Environments</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </div>
+    </nav>
+    <div id="mobile" class="mobile-container">
+      <div id="mobileNav" class="topnav">
+        <!--<a href="#home" class="active">Logo</a>-->
+        <div id="myLinks">
+          <a href="index.html">Home</a>
+          <a href="story.html">Story</a>
+          <a href="enemies.html">Enemies</a>
+          <a href="environments.html">Environments</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  </div>
+<container >
+    <div class="parallax">
+            </video></div>
+   <!-- <img src="header.gif" alt="Cinque Terre">-->
+    <div id="grad4" class="header creepster-66" style="color:white;padding-bottom:0px;background-color: red;padding-bottom:70px;"><h1 style="margin-top:10px;margin-bottom:10px;">The Story of DemonKid</h1>
+    <hr class="hr-line-primary">
+    </div>
+</container>
+<div id="mobile" class="mobile-container">
+  <div id="mobileNav" class="topnav">
+    <!--<a href="#home" class="active">Logo</a>-->
+    <div id="myLinks">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="enemies.html">Enemies</a>
+      <a href="environments.html">Environments</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<div class="story center">
+  
+    <div class="story-flex-item" style="border-right:1px solid black;background-color: lightcyan;font-size:18px;padding:10px;"><p class="story-flex-style">Once upon a time, in a small village nestled at the edge of a dense forest, there lived a young man named Lucas. Unbeknownst to the villagers, Lucas had made a grave mistake years ago. In his desperation to achieve greatness, he had made a pact with a demon named Azazel. Lucas traded his soul for wealth, power, and success, but as time passed, he realized the true cost of his decision.</p>
+    <p class="story-flex-style">Haunted by guilt and the emptiness within, Lucas found himself longing for redemption. Little did he know that Azazel, the demon with whom he had bargained, had grown fond of Lucas. Unlike other demons, Azazel had a glimmer of compassion and empathy within his fiery heart. Witnessing Lucas’ despair, he decided to help him find a way to restore his soul.</p>
+    </div>
+    <div class="story-flex-item" > <img src="img/story/cropped-skeleton_run_00.png" style="width:70%;margin-left: 20%;margin-top:50px"></div>
+
+  </div>
+  <div class="story center">
+    <div class="story-flex-item"> <img src="img/story/skeleton-13_shocked_0.png" style="width:70%;margin-top:50px;""></div>
+
+    <div class="story-flex-item" style="padding:10px;border-left:1px solid black;background-color: lightgrey;font-size:18px;">
+    <p class="story-flex-style">Azazel, disguised as a shadowy figure, appeared before Lucas one moonlit night. Startled, Lucas stumbled back but quickly recognized the familiar face. However, instead of feeling fear, he sensed a strange warmth emanating from the demon.</p>
+
+     <p class="story-flex-style"> “Do not be afraid, Lucas,” Azazel spoke, his voice surprisingly soothing. “I have seen the torment within your soul, and I wish to aid you in reclaiming it.”</p>
+      
+     <p class="story-flex-style"> Lucas, torn between disbelief and hope, cautiously replied, “Why would you help me, Azazel? You are a demon, and I am merely a pawn in your games.”</p>
+      
+    <p class="story-flex-style">  Azazel’s eyes softened, reflecting genuine concern. “Yes, I am a demon, but even demons can recognize their mistakes. I have witnessed your struggle, and it is time to set things right.”</p>
+    </div>
+
+  </div>
+  <div class="story center">
+  
+    <div class="story-flex-item" style="padding:10px;border-right:1px solid black;background-color: lightgreen;font-size:18px;"><p class="story-flex-style">With a wave of his hand, Azazel conjured a portal leading to the Netherworld, a realm where souls resided. He explained that within that realm, the River of Reflections flowed, holding the key to Lucas’ redemption. However, the journey would not be easy, as the river was guarded by fearsome creatures and treacherous obstacles.</p>
+    <p class="story-flex-style">Driven by a newfound determination, Lucas stepped into the portal alongside Azazel. As they ventured deeper into the Netherworld, they faced monstrous beasts and dark spirits. Lucas battled his inner demons while Azazel fought alongside him, demonstrating the powers that were once at Lucas’ disposal.</p>
+    </div>
+    <div class="story-flex-item"> <img src="img/story/skeleton-14_faint_19.png" style="width:100%"></div>
+
+  </div>
+  <div class="story center">
+    <div class="story-flex-item"> <img src="img/story/skeleton-06_funny_gesture_13.png" style="width:70%"></div>
+
+    <div class="story-flex-item" style="padding:10px;border-left:1px solid black;background-color: lightgoldenrodyellow;font-size:18px;"><p class="story-flex-style">Their bond strengthened with each passing trial, and despite the hardships, Lucas found solace in Azazel’s company. The demon’s unwavering loyalty and guidance filled the void that wealth and success had failed to satisfy.</p>
+    <p class="story-flex-style">Finally, after enduring countless challenges, they reached the edge of the River of Reflections. Lucas gazed into the shimmering waters, and within its depths, he saw his lost soul, fragmented and weakened. But he also saw glimmers of his former self, the goodness that had been overshadowed by his past choices.</p>
+    </div>
+
+  </div>
+
+  <div class="story center">
+  
+    <div class="story-flex-item" style="padding:10px;border-right:1px solid black;background-color: lightseagreen;font-size:18px;"><p class="story-flex-style">Drawing strength from Azazel’s presence, Lucas dived into the river, determined to gather every fragment of his soul. With each piece he collected, he felt his remorse lessen, and his true essence began to reemerge.</p>
+    <p class="story-flex-style">As Lucas emerged from the river, his soul restored, he looked up to see Azazel, who had witnessed his transformation. The demon’s face was filled with a mix of pride and sorrow.</p>
+    <p class="story-flex-style">“It is time for me to depart, Lucas,” Azazel whispered. “You have found your redemption, and it is time for me to face my own demons. Remember, even in the darkest corners, there is always a flicker of light waiting to guide you.”</p>  
+  </div>
+    <div class="story-flex-item"> <img src="img/story/skeleton-04_jump_up_00.png" style="width:50%;margin-left:100px;"></div>
+
+  </div>
+  <div class="story center">
+    <div class="story-flex-item"> <img src="img/story/skeleton-01_idle_00.png" style="width:60%; padding-left:100px;"></div>
+
+    <div class="story-flex-item" style="padding:10px;border-left:1px solid black;background-color: lightskyblue;font-size:18px;"><p class="story-flex-style">Lucas reached out, wanting to thank Azazel, but the demon vanished before his fingers could touch him. Lucas stood there, his heart heavy with gratitude and newfound purpose.</p>
+    <p class="story-flex-style">Returning to the village, Lucas used his regained soul and the lessons learned from his journey to make amends for his past actions.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+    
+   
+
+
+    
+  
+ <footer id="grad3"></footer>
+
+</body>
+<script src="js/mobile.js"></script>
+
+</html>
