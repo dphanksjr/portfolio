@@ -53,7 +53,7 @@ body, html {
   }
   .parallax3 {
     /* The image used */
-    background-image: url('/img/Pumpkin.png');
+    background-image: url('pumpkin.png');
   
     /* Full height */
     height: 60%; 
