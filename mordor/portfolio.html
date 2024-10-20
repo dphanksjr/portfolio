@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Section - Mordor Armory</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 69, 0, 0.7); /* Glowing border */
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+        }
+
+        .project-item:hover {
+            transform: scale(1.05); /* Hover zoom effect */
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.7); /* Intensify glow */
+        }
+
+        .project-item img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.7);
+            transition: filter 0.3s;
+            max-height:250px;
+        }
+
+        .project-item:hover img {
+            filter: brightness(1); /* Brighten on hover */
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px); /* Blurs the image behind the overlay */
+            background: rgba(0, 0, 0, 0.5); /* Slightly darkens with transparency */
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s;
+        }
+
+
+
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-title {
+            background-color:#fff;
+            padding:4px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            color: #ff4500;
+            text-shadow: 2px 2px 8px rgba(255, 69, 0, 2.9); /* Glowing text for more visibility */
+        }
+
+
+        /* Modal (Lightbox) */
+     /* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 20px;
+}
+
+.modal-content {
+    max-width: 800px;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    color: white;
+    height:100%;
+}
+
+.modal img {
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.modal-details {
+    margin-top: 10px;
+    height:100%;
+}
+
+#modal-title {
+    font-size: 2rem;
+    color: #ff4500; /* Fiery color for title */
+}
+
+#modal-description {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+#modal-technologies {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+#modal-technologies li {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+        .modal.active {
+            display: flex;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff4500;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <!-- Project 1 -->
+        <div class="project-item" onclick="openModal('project1')">
+            <img src="images/thumbnails/project1-thumbnail.jpg" alt="Project 1">
+            <div class="project-overlay">
+                <span class="project-title">Mapping Marcel Breuer</span>
+            </div>
+        </div>
+    
+        <!-- Project 2 -->
+        <div class="project-item" onclick="openModal('project2')">
+            <img src="images/thumbnails/elementor4.png" alt="Project 2">
+            <div class="project-overlay">
+                <span class="project-title">Elementor Project</span>
+            </div>
+        </div>
+                <!-- Project 3 -->
+        <div class="project-item" onclick="openModal('project3')">
+            <img src="images/thumbnails/demonkid.png" alt="Project 3">
+            <div class="project-overlay">
+                <span class="project-title">Demonkid</span>
+            </div>
+        </div>
+                <!-- Project 4 -->
+        <div class="project-item" onclick="openModal('project4')">
+            <img src="images/thumbnails/library.png" alt="Project 4">
+            <div class="project-overlay">
+                <span class="project-title">Library Website</span>
+            </div>
+        </div>
+                    <!-- Project 5 -->
+        <div class="project-item" onclick="openModal('project5')">
+            <img src="images/thumbnails/soundbeat.png" alt="Project 5">
+            <div class="project-overlay">
+                <span class="project-title">SoundBeat</span>
+            </div>
+        </div>
+                        <!-- Project 6 -->
+        <div class="project-item" onclick="openModal('project6')">
+            <img src="images/thumbnails/django.png" alt="Project 6">
+            <div class="project-overlay">
+                <span class="project-title">Django Portfolio</span>
+            </div>
+        </div>
+                    <!-- Project 7 -->
+        <div class="project-item" onclick="openModal('project7')">
+            <img src="images/thumbnails/api.png" alt="Project 7">
+            <div class="project-overlay">
+                <span class="project-title">Django API</span>
+            </div>
+        </div>
+                            <!-- Project 8 -->
+        <div class="project-item" onclick="openModal('project8')">
+            <img src="images/thumbnails/retro.jpg" alt="Project 8">
+            <div class="project-overlay">
+                <span class="project-title">Product Sale </span>
+            </div>
+        </div>                    <!-- Project 9 -->
+        <div class="project-item" onclick="openModal('project9')">
+            <img src="images/thumbnails/wix.png" alt="Project 9">
+            <div class="project-overlay">
+                <span class="project-title">Wix Landing Page</span>
+            </div>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+    
+<!-- Modal (Lightbox) for viewing full project -->
+<div id="modal" class="modal">
+    <button class="close-modal" onclick="closeModal()">Close</button>
+    <div class="modal-content">
+        <img id="modal-img" src="" alt="Full Project View">
+        <div class="modal-details">
+            <h2 id="modal-title">Project Title</h2>
+            <p id="modal-description">Project description will go here. You can describe the project’s goals, technologies used, design challenges, etc.</p>
+            <ul id="modal-technologies">
+                <!-- Example list of technologies used -->
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</body>
+<script>
+// JavaScript to handle modal with dynamic content
+function openModal(project) {
+    var modal = document.getElementById('modal');
+    var modalImg = document.getElementById('modal-img');
+    var modalTitle = document.getElementById('modal-title');
+    var modalDescription = document.getElementById('modal-description');
+    var modalTechnologies = document.getElementById('modal-technologies');
+
+    // Example data for projects (you can use a JSON structure or array of objects)
+    var projectData = {
+        project1: {
+            img: 'images/full-projects/project1-full.png',
+            title: 'Darkened Scroll: Project 1',
+            description: 'This project was designed to showcase ancient scrolls. Technologies used include HTML, CSS, and JavaScript. The design challenges involved achieving a realistic scroll effect.',
+            technologies: ['HTML', 'CSS', 'JavaScript']
+        },
+        project2: {
+            img: 'images/full-projects/elementor3.png',
+            title: 'Elementor Project',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project3: {
+            img: 'images/full-projects/demonkid_lg.png',
+            title: 'Elementor Project',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project4: {
+            img: 'images/full-projects/library.png',
+            title: 'Library Website',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project5: {
+            img: 'images/full-projects/soundbeat.png',
+            title: 'SoundBeat',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project6: {
+            img: 'images/full-projects/soundbeat.png',
+            title: 'Django Portfolio',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project7: {
+            img: 'images/full-projects/api.png',
+            title: 'Django Portfolio API',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project8: {
+            img: 'images/full-projects/retro.jpg',
+            title: 'Product for sale',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        },
+        project9: {
+            img: 'images/full-projects/wix.png',
+            title: 'Wix Landing Page',
+            description: 'This project focuses on an interactive forge, using WebGL for real-time rendering and animation. The goal was to create an immersive environment with dynamic lighting.',
+            technologies: ['HTML', 'WebGL', 'JavaScript', 'Three.js']
+        }
+        // Add more projects as needed
+    };
+
+    // Update modal content dynamically based on which project is clicked
+    if (projectData[project]) {
+        modalImg.src = projectData[project].img;
+        modalTitle.textContent = projectData[project].title;
+        modalDescription.textContent = projectData[project].description;
+
+        // Clear previous technologies and add new ones
+        modalTechnologies.innerHTML = '';
+        projectData[project].technologies.forEach(function(tech) {
+            var li = document.createElement('li');
+            li.textContent = tech;
+            modalTechnologies.appendChild(li);
+        });
+    }
+
+    modal.classList.add('active');
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+}
+
+</script>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Section - Mordor Armory</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 69, 0, 0.7); /* Glowing border */
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.4);
+        }
+
+        .project-item:hover {
+            transform: scale(1.05); /* Hover zoom effect */
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.7); /* Intensify glow */
+        }
+
+        .project-item img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.7);
+            transition: filter 0.3s;
+            max-height:250px;
+        }
+
+        .project-item:hover img {
+            filter: brightness(1); /* Brighten on hover */
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px); /* Blurs the image behind the overlay */
+            background: rgba(0, 0, 0, 0.5); /* Slightly darkens with transparency */
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s;
+        }
+
+
+
+        .project-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-title {
+            background-color:#fff;
+            padding:4px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            color: #ff4500;
+            text-shadow: 2px 2px 8px rgba(255, 69, 0, 2.9); /* Glowing text for more visibility */
+        }
+
+
+        /* Contact Section */
+.contact-section {
+    background: #1b1b1b;
+    color: #eee;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #bbb;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #ff4500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background: #333;
+    color: #eee;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff4500;
+}
+
+.submit-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e03e00;
+}
+
+.social-links {
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: #ff4500;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #e03e00;
+}
+    </style>
+</head>
+<body>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Forge Your Connection</h2>
+            <p class="section-subtitle">Reach out to collaborate, discuss projects, or simply connect.</p>
+            
+            <!-- Contact Form -->
+            <form id="contact-form" class="contact-form" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+    
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+    
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <h3>Follow Me Beyond the Gates</h3>
+                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="mailto:youremail@example.com">Email</a>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+<script>
+function submitForm(event) {
+    event.preventDefault(); // Prevent form from submitting normally
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Simple validation
+    if (name && email && message) {
+        // Replace this part with actual form submission (e.g., EmailJS or API call)
+        alert("Message sent! We'll get back to you soon.");
+    } else {
+        alert("Please fill out all fields.");
+    }
+}
+
+</script>
+</html>
