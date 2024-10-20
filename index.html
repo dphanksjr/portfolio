@@ -1,956 +1,112 @@
 <!DOCTYPE html>
-<html>
-<title>Daniel Hanks Jr Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="layout.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
-<style>
-
-body,h1,h2,h3,h4,h5,h6 {font-family: "Source Code Pro", monospace}
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
- /* width: 33.33%;*/
-  display: none; /* Hide all elements by default */
-}
-
-/* Clear floats after rows */ 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.row {
-  margin: 10px -16px;
-}
-
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-/* Content */
-.content {
-  background-color: white;
-  padding: 10px;
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: white;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #000;
-  color: white;
-}
-
-.about_me{
-    background-color: black;
-    color: forestgreen;
-    font-size: x-large;
-    border-radius: 12px;
-    padding: 2%;
-    min-height:200px;
-
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the left */
-.left {
-  left: 0;
-}
-
-/* Place the container to the right */
-.right {
-  left: 50%;
-}
-
-/* Add arrows to the left container (pointing right) */
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 350px;
-  height: 300px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-card-back {
-  background-color: #000;
-  color: forestgreen;
-  transform: rotateY(180deg);
-  font-weight: 600;
-  font-size:1.1em;
-}
-.svg-inline--fa{
-  width:30px;
-  margin-right:10px;
-}
-
-.w3-button.download{
-  background-color: black !important;
-  color: forestgreen !important;;
-}
-
-.w3-button.download:hover{
-  background-color: forestgreen !important;
-  color: white !important;;
-}
-
-@media screen and (max-width: 1000px) {
-  body{
-    overflow-x: hidden;
-  }
-  #monitor{
-  display:none;
-}
-#monitor_container {
-  display:none;
-}
-#switch {
-  margin-left:10px;
-}
-h4,p {
-  margin-left:10px;
-}
-#tv_container{
-  margin-left:10px;
-}
-#myBtnContainer{
-    margin-left:5px;
-
-  }
-  .row{
-    margin-left:5px;
-  }
-  .w3-grey{
-  margin-left:10px;
-  margin-right:10px;
-}
-
-}
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
-  .timeline::after {
-  left: 31px;
-  }
-
-  body{
-    overflow-x: hidden;
-  }
-  h4, p{
-     margin-left:5px;
-  }
-  #myBtnContainer{
-    margin-left:5px;
-
-  }
-  .row{
-    margin-left:5px;
-  }
-  #tv_container{
-    margin-right:5px;
-  }
-.w3-grey{
-  margin-left:10px;
-  margin-right:10px;
-}
- code, kbd, pre, samp {
-    font-family: monospace,monospace;
-    font-size: .8em;
-}
-
-  /* Full-width containers */
-  .container {
-  width: 100%;
-  padding-left: 70px;
-  padding-right: 25px;
-  }
-  
-  /* Make sure that all arrows are pointing leftwards */
-  .container::before {
-  left: 60px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-  }
-
-  /* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-  left: 15px;
-  }
-  
-  /* Make all right containers behave like the left ones */
-  .right {
-  left: 0%;
-  }
-
-  .btn {
-    margin-bottom:10px;
-  }
-
-#monitor{
-  display:none;
-}
-#monitor_container {
-  display:none;
-}
-#switch {
-  display:none;
-}
-#projects{
-  color:white;
-  background-color: black;
-}
-#tv_container{
-  padding-right:100px;
-  margin-right:50px;
-  margin-top:200px;
-}
-#tv_container video {
-left:0px !important;
-}
-}
-@media screen and (max-width: 400px) {
-  .row, .row > .column {
-    padding: -0;
-    padding-bottom:5px;
-}
-}
-
-
-</style>
-
-<body id="main" style="max-width: 1600px;" class="w3-light-grey w3-content" onload="start();" >
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:280px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <img src="images/profile-250.jpg" style="width:45%;" class="w3-round"><br><br>
-    <h4><b>Daniel Hanks Jr</b></h4>
-    <p class="w3-text-grey">Portfolio</p>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i>PROJECTS</a> 
-    <a href="#timeline" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar fa-fw w3-margin-right"></i>TIMELINE</a> 
-    <a href="#fun" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><span style="padding-right:5px;">&#x1F921;</span> FUN STUFF</a> 
-    <a href="mailto:dphanksjr@gmail.com" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-  </div>
-  <div class="w3-panel w3-large">
-  <!--  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>-->
-
-    <a href="https://www.linkedin.com/in/danielhanksjr/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-    <a href="https://github.com/dphanksjr"><i class="fa fa-github w3-hover-opacity"></i></a>
-    <a href="https://dphanksjr.itch.io/"><img src="https://static.itch.io/images/itchio-textless-black.svg" width="22px" style="margin-bottom:3px" /></a>
-  </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header >
-    <a href="#"><img src="images/profile-250.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1 style="font-size:8px;float:left;width:50%;"><b><pre><code>
-                                           
-██████╗  █████╗ ███╗   ██╗██╗███████╗██╗         ██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗███████╗         ██╗██████╗ 
-██╔══██╗██╔══██╗████╗  ██║██║██╔════╝██║         ██║  ██║██╔══██╗████╗  ██║██║ ██╔╝██╔════╝         ██║██╔══██╗
-██║  ██║███████║██╔██╗ ██║██║█████╗  ██║         ███████║███████║██╔██╗ ██║█████╔╝ ███████╗         ██║██████╔╝
-██║  ██║██╔══██║██║╚██╗██║██║██╔══╝  ██║         ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ ╚════██║    ██   ██║██╔══██╗
-██████╔╝██║  ██║██║ ╚████║██║███████╗███████╗    ██║  ██║██║  ██║██║ ╚████║██║  ██╗███████║    ╚█████╔╝██║  ██║
-╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝     ╚════╝ ╚═╝  ╚═╝
-                                                                                                               
-                                                                                                                                                                                            
-                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                 
-        </code></pre></b></h1>
-        <img id="monitor" src="monitor.png"/ style="width:300px; float:right; margin-top:10px;">
-        <div id="monitor_container">
-          <video muted autoplay loop width="280" height="240">
-              <source src="portfolioLong.mp4" type="video/mp4" />            </video>
-      </div>
-      <style>
-          #monitor_container {
-              width: 300px; /* Adjust TV image width */
-              height: 100px; /* Adjust TV image height */
-              position: relative;
-          }
-          #monitor_container video {
-              position: absolute;
-              top: -20px; /* Adjust top position */
-              left: 980px; /* Adjust left position */
-          }
-          </style>
-    </div>
-
-  </header>
-  <div id="about" class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>About Me</b></h4>
-    <p id="about_me" class="about_me"></p>
-    <hr>
-  </div>
-    <h4>Technical Skills</h4>
-    <!-- Progress bars / Skills -->
-    <p>HTML/CSS</p>
-    <div class="w3-grey">
-      <div id="myBar" class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">90%</div>
-    </div>
-    <p>JavaScript</p>
-    <div class="w3-grey">
-      <div id="myBar2" class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
-    </div>
-    <p>Django/Wagtail/Python</p>
-    <div class="w3-grey">
-      <div id="myBar3" class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
-    </div>
-    <p>PHP/WordPress</p>
-    <div class="w3-grey">
-      <div id="myBar4" class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">75%</div>
-    </div>
-    <p>
-      <button class="download w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
-        <i class="fa fa-download w3-margin-right"></i><a href="resume.pdf" target="_blank">Download Resume</a>
-      </button>
-    </p>
-    <hr>
-    <h4 id="portfolio"><b>Projects</b></h4>
-    <div id="myBtnContainer">
-        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-        <button class="btn" onclick="filterSelection('html')"> HTML/CSS</button>
-        <button class="btn" onclick="filterSelection('js')"> JS</button>
-        <button class="btn" onclick="filterSelection('python')"> Python</button>
-        <button class="btn" onclick="filterSelection('PHP')"> PHP</button>
-        <button class="btn" onclick="filterSelection('WordPress')"> WordPress</button>
-        <button class="btn" onclick="filterSelection('django')"> Django/Wagtail</button>
-    </div>
-
-  <!-- Portfolio Gallery Grid -->
-  <div class="row">
-    <div class="column python django html js w3-row-padding">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/library.png" alt="Avatar" style="width:350px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h4>Syracuse University Libraries website</h4> 
-                <p><a href="https://library.syracuse.edu/" target="_blank" >Click for site</a></p> 
-                
-              </div>
-            </div>
-          </div>
-    </div>
-
-    <div class="column python django html js w3-row-padding">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/django.png" alt="Avatar" style="width:350px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h4>Django Portfolio</h4> 
-                <p><a href="http://dphanksjr.pythonanywhere.com/" target="_blank" >Click for site</a></p> 
-               <p>An example of how you can use machine learning and bio inspired python scripts in Django.</p>
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="column python django html js w3-row-padding">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/api.png" alt="Avatar" style="width:350px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h4>Django Example Project Portfolio</h4> 
-                <p>This site uses the Django REST API.
-                  The first site is the django site.  The second is a regular html site thats using the Django REST API to display the projects.
-                </p>
-                <p><a href="http://dhanksjr.pythonanywhere.com/" target="_blank" >Click for Django site.</a></p> 
-                <p><a href="https://dphanksjr.github.io/portfolio/frontend/projects-list.html" target="_blank" >Click for REST API site.</a></p> 
-
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="column PHP WordPress html js w3-row-padding">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/soundbeat.png" alt="Avatar" style="width:350px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h4>Sound Beat</h4> 
-                <p><a href="https://soundbeat.org" target="_blank" >Click to see the site.</a></p> 
-                <p>The site shown here is regular WordPress site I built.  This site also offers a RESTful API where people can use a regular html built site to login and download music that is offered by Sound Beat.  I also had to build my own child theme for this site.</p>
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="column WordPress HTML w3-row-padding">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/demonkid.jpg" alt="Avatar" style="width:350px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h4>DemonKid (*working title)</h4> 
-                <p>This site is meant to promote an upcoming game I built in Unity that's not quite finished.</p> 
-                <p><a href="images/demonkid_lg.png" target="_blank">Click to view screenshot 1</a></p>
-                <p><a href="images/demonkid4.png" target="_blank">Click to view screenshot 2</a></p>
-                <p><a href="https://dphanksjr.github.io/portfolio/demonkid/">Click to view an html variation of this website that utilizes parallax scrolling and css animations.</a></p>
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="column WordPress HTML w3-row-padding">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="images/elementor4.png" alt="Avatar" style="width:350px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h4>Elementor Demo</h4> 
-                <p>Another WordPress site utilizing the elementor plugin.  This is also local only.</p> 
-                <p><a href="images/elementor2.png" target="_blank">Click to view screenshot 1</a></p>
-                <p><a href="images/elementor3.png" target="_blank">Click to view screenshot 2</a></p>
-
-              </div>
-            </div>
-          </div>
-    </div>
-
-  <!-- END GRID -->
-  </div>
-  
-  <!--<a id="projects" style="color:green;background-color: black; padding:10px;border:1px solid black; border-radius: 25px;" href="https://dphanksjr.github.io/main/" target="_blank">Click here for more projects</a>
-  <a id="itch" style="color:green;background-color: black; padding:10px;border:1px solid black; border-radius: 25px;" href="https://dphanksjr.itch.io/" target="_blank">Click here to see the games I'm making on my itch.io page!</a>-->
-  
-  <div id="extra" class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>Extra</b></h4>
-    <p id="extra_stuff" class="about_me">
-      So I decided I wanted to play with new layouts and possibly make a new portfolio page.
-      I was trying to decide what direction to go in, while Lord of the Rings was on in the background.
-      I then jokingly asked ChatGPT to build me a portfolio page worthy of Mordor.  It surprised me with
-      a framework based on LOTR.  So I rolled with it.  The results can be found here: <a href="mordor/index.html">Portfolio page</a>.  
-      It's pretty basic but it only took a couple hours and was a fun little test of what can be done with AI.
-    </p>
-    <p>  <a id="projects" style="color:green;background-color: black; padding:10px;border:1px solid black; border-radius: 25px;font-size:1.5rem;" href="https://dphanksjr.github.io/main/" target="_blank">Click here for more projects</a>
-      <a id="itch" style="color:green;background-color: black; padding:10px;border:1px solid black; border-radius: 25px;font-size:1.5rem;" href="https://dphanksjr.itch.io/" target="_blank">Click here to see the games I'm making on my itch.io page!</a>
-    </p>
-    <hr>
-  </div>
-  
-  <hr>
-  <h4 id="timeline"><b>Timeline</b></h4>
-    <div class="timeline">
-        <div class="container left">
-          <div class="content">
-            <h2>2014-Present</h2>
-            <p>Syracuse University Libraries | IT Analyst/Programmer</p>
-            <p >
-              <svg class="svg-inline--fa fa-html5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="html5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"></path></svg><!-- <i class="fab fa-html5"></i> Font Awesome fontawesome.com -->
-               <svg class="svg-inline--fa fa-css3-alt" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="css3-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"></path></svg><!-- <i class="fab fa-css3-alt"></i> Font Awesome fontawesome.com -->
-              <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"></path></svg><!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com --></li>
-              <svg class="svg-inline--fa fa-python" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="python" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4 .1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3 .1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg><!-- <i class="fab fa-python"></i> Font Awesome fontawesome.com -->
-              <svg class="svg-inline--fa fa-wordpress" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="wordpress" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M61.7 169.4l101.5 278C92.2 413 43.3 340.2 43.3 256c0-30.9 6.6-60.1 18.4-86.6zm337.9 75.9c0-26.3-9.4-44.5-17.5-58.7-10.8-17.5-20.9-32.4-20.9-49.9 0-19.6 14.8-37.8 35.7-37.8 .9 0 1.8 .1 2.8 .2-37.9-34.7-88.3-55.9-143.7-55.9-74.3 0-139.7 38.1-177.8 95.9 5 .2 9.7 .3 13.7 .3 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l77.5 230.4L249.8 247l-33.1-90.8c-11.5-.7-22.3-2-22.3-2-11.5-.7-10.1-18.2 1.3-17.5 0 0 35.1 2.7 56 2.7 22.2 0 56.7-2.7 56.7-2.7 11.5-.7 12.8 16.2 1.4 17.5 0 0-11.5 1.3-24.3 2l76.9 228.7 21.2-70.9c9-29.4 16-50.5 16-68.7zm-139.9 29.3l-63.8 185.5c19.1 5.6 39.2 8.7 60.1 8.7 24.8 0 48.5-4.3 70.6-12.1-.6-.9-1.1-1.9-1.5-2.9l-65.4-179.2zm183-120.7c.9 6.8 1.4 14 1.4 21.9 0 21.6-4 45.8-16.2 76.2l-65 187.9C426.2 403 468.7 334.5 468.7 256c0-37-9.4-71.8-26-102.1zM504 256c0 136.8-111.3 248-248 248C119.2 504 8 392.7 8 256 8 119.2 119.2 8 256 8c136.7 0 248 111.2 248 248zm-11.4 0c0-130.5-106.2-236.6-236.6-236.6C125.5 19.4 19.4 125.5 19.4 256S125.6 492.6 256 492.6c130.5 0 236.6-106.1 236.6-236.6z"></path></svg><!-- <i class="fab fa-wordpress"></i> Font Awesome fontawesome.com -->
-              <svg class="svg-inline--fa fa-php" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="php" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"></path></svg><!-- <i class="fab fa-php"></i> Font Awesome fontawesome.com -->
-              <svg class="svg-inline--fa fa-git-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="git-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M100.6 334.2c48.57 3.31 58.95 2.11 58.95 11.94 0 20-65.55 20.06-65.55 1.52 .01-5.09 3.29-9.4 6.6-13.46zm27.95-116.6c-32.29 0-33.75 44.47-.75 44.47 32.51 0 31.71-44.47 .75-44.47zM448 80v352a48 48 0 0 1 -48 48H48a48 48 0 0 1 -48-48V80a48 48 0 0 1 48-48h352a48 48 0 0 1 48 48zm-227 69.31c0 14.49 8.38 22.88 22.86 22.88 14.74 0 23.13-8.39 23.13-22.88S258.6 127 243.9 127c-14.48 0-22.88 7.84-22.88 22.31zM199.2 195h-49.55c-25-6.55-81.56-4.85-81.56 46.75 0 18.8 9.4 32 21.85 38.11C74.23 294.2 66.8 301 66.8 310.6c0 6.87 2.79 13.22 11.18 16.76-8.9 8.4-14 14.48-14 25.92C64 373.4 81.53 385 127.5 385c44.22 0 69.87-16.51 69.87-45.73 0-36.67-28.23-35.32-94.77-39.38l8.38-13.43c17 4.74 74.19 6.23 74.19-42.43 0-11.69-4.83-19.82-9.4-25.67l23.38-1.78zm84.34 109.8l-13-1.78c-3.82-.51-4.07-1-4.07-5.09V192.5h-52.6l-2.79 20.57c15.75 5.55 17 4.86 17 10.17V298c0 5.62-.31 4.58-17 6.87v20.06h72.42zM384 315l-6.87-22.37c-40.93 15.37-37.85-12.41-37.85-16.73v-60.72h37.85v-25.41h-35.82c-2.87 0-2 2.52-2-38.63h-24.18c-2.79 27.7-11.68 38.88-34 41.42v22.62c20.47 0 19.82-.85 19.82 2.54v66.57c0 28.72 11.43 40.91 41.67 40.91 14.45 0 30.45-4.83 41.38-10.2z"></path></svg><!-- <i class="fab fa-git-square"></i> Font Awesome fontawesome.com -->
-              <svg class="svg-inline--fa" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/></svg>            </div>
-
-            </p>
-    
-          </div>
-        </div>
-        <div class="timeline">
-        <div class="container right">
-          <div class="content">
-            <h2>2012-2014</h2>
-            <p>Loretto | Analyst Programmer</p>
-            <p> <svg class="svg-inline--fa fa-html5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="html5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"></path></svg><!-- <i class="fab fa-html5"></i> Font Awesome fontawesome.com -->
-              <svg class="svg-inline--fa fa-css3-alt" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="css3-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"></path></svg><!-- <i class="fab fa-css3-alt"></i> Font Awesome fontawesome.com -->
-             <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"></path></svg><!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com --></li>
-             <svg class="svg-inline--fa" viewBox="0 0 1343 1471.2"><title>csharp</title><path d="M653.3 1.3C641 3 630.5 5.9 619 10.7c-4.9 2.1-63.7 34.5-130.5 72.1l-182 102.3-153 86-99 56.5c-8.8 6.2-25.4 23-31.6 32.2-10 14.6-17.1 31.5-21.1 50-1.7 8.1-1.8 23-1.8 326l1.8 326c7.4 34.5 27.1 64.7 54.1 83 3.9 2.6 41.5 24.1 83.6 47.7l484 270.1c15.3 6 29.6 8.5 48 8.6 22 0 41.1-4.4 59.4-13.6 4.4-2.2 73.7-40.9 154-86l267.1-150 141-81.3c24.4-18.9 40.6-44.9 47.7-76.6l2.3-10.4V735.8l-1.8-326c-5.9-27.7-19-51.6-38.3-70-13.9-13.2 4.5-2.5-242.4-141.2L939 130.3 801.5 53 725 11.1c-11.5-5-23.1-8.1-36.2-9.8-13.5-1.8-22.3-1.8-35.5 0zm53.8 352c50.9 4.8 96.5 18.3 142 42 37.4 19.4 69.1 43.3 100.3 75.8 8.5 8.8 27.1 30.7 27.1 31.9 0 .8-8.3 5.8-43 25.8l-80.4 46.6-15.9 9.3-10.1-9.6c-17.6-16.6-35.5-29.2-55.2-39.1-41.5-20.7-87.1-28.2-132.4-21.6-24.4 3.5-44 9.7-67.6 21.4-66.1 32.7-110.8 94.5-122 169-2.4 15.9-2.4 46.4 0 62 7.4 48.3 27.6 89.5 61 124.7 26.9 28.4 68.2 52 107.7 61.7 67.3 16.4 138.2.6 192.9-43.1 4.1-3.3 11.6-9.8 16.6-14.6l9.1-8.6 10.4 6.1 80.9 46.8 46.9 27.5c2.1 2-10.8 17.5-33.4 40-33.4 33.4-63.7 55.1-104 74.6-39.6 19-79 30.3-126.5 36.1-14 1.7-65.9 1.7-80.5 0-90.8-10.8-170.1-49.2-232.7-112.8-42.7-43.5-71.3-89.7-90.8-146.9-26.6-78.3-26.7-165.7-.2-244.5C345.5 500.3 434.7 410.7 548 372.1c25.6-8.7 57.8-15.8 83-18.2l14.5-1.4c10.4-1 47.5-.5 61.6.8zm348.4 254.5v32h32 32v-32-32h32 32v32 32h32 32v32 32h-32-32v32 32h32 32v32 32h-32-32v32 32h-32-32v-32-32h-32-32v32 32h-32-32v-32-32h-32-32v-32-32h32 32v-32-32h-32-32v-32-32h32 32v-32-32h32 32v32zm0 128v32h32 32v-32-32h-32-32v32z"></path></svg>
-             <svg class="svg-inline--fa" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/></svg>            </div>
-            </p>
-            </div>
-        <div class="container left">
-            <div class="content">
-              <h2>2006-2012</h2>
-              <p>Falk College of Sport & Human Dyamics at Syracuse University | Computer Consultant</p>
-              <p><p> <svg class="svg-inline--fa fa-html5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="html5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"></path></svg><!-- <i class="fab fa-html5"></i> Font Awesome fontawesome.com -->
-                <svg class="svg-inline--fa fa-css3-alt" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="css3-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"></path></svg><!-- <i class="fab fa-css3-alt"></i> Font Awesome fontawesome.com -->
-               <svg class="svg-inline--fa fa-js-square" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"></path></svg><!-- <i class="fab fa-js-square"></i> Font Awesome fontawesome.com --></li>
-               <svg class="svg-inline--fa" viewBox="0 0 1343 1471.2"><title>csharp</title><path d="M653.3 1.3C641 3 630.5 5.9 619 10.7c-4.9 2.1-63.7 34.5-130.5 72.1l-182 102.3-153 86-99 56.5c-8.8 6.2-25.4 23-31.6 32.2-10 14.6-17.1 31.5-21.1 50-1.7 8.1-1.8 23-1.8 326l1.8 326c7.4 34.5 27.1 64.7 54.1 83 3.9 2.6 41.5 24.1 83.6 47.7l484 270.1c15.3 6 29.6 8.5 48 8.6 22 0 41.1-4.4 59.4-13.6 4.4-2.2 73.7-40.9 154-86l267.1-150 141-81.3c24.4-18.9 40.6-44.9 47.7-76.6l2.3-10.4V735.8l-1.8-326c-5.9-27.7-19-51.6-38.3-70-13.9-13.2 4.5-2.5-242.4-141.2L939 130.3 801.5 53 725 11.1c-11.5-5-23.1-8.1-36.2-9.8-13.5-1.8-22.3-1.8-35.5 0zm53.8 352c50.9 4.8 96.5 18.3 142 42 37.4 19.4 69.1 43.3 100.3 75.8 8.5 8.8 27.1 30.7 27.1 31.9 0 .8-8.3 5.8-43 25.8l-80.4 46.6-15.9 9.3-10.1-9.6c-17.6-16.6-35.5-29.2-55.2-39.1-41.5-20.7-87.1-28.2-132.4-21.6-24.4 3.5-44 9.7-67.6 21.4-66.1 32.7-110.8 94.5-122 169-2.4 15.9-2.4 46.4 0 62 7.4 48.3 27.6 89.5 61 124.7 26.9 28.4 68.2 52 107.7 61.7 67.3 16.4 138.2.6 192.9-43.1 4.1-3.3 11.6-9.8 16.6-14.6l9.1-8.6 10.4 6.1 80.9 46.8 46.9 27.5c2.1 2-10.8 17.5-33.4 40-33.4 33.4-63.7 55.1-104 74.6-39.6 19-79 30.3-126.5 36.1-14 1.7-65.9 1.7-80.5 0-90.8-10.8-170.1-49.2-232.7-112.8-42.7-43.5-71.3-89.7-90.8-146.9-26.6-78.3-26.7-165.7-.2-244.5C345.5 500.3 434.7 410.7 548 372.1c25.6-8.7 57.8-15.8 83-18.2l14.5-1.4c10.4-1 47.5-.5 61.6.8zm348.4 254.5v32h32 32v-32-32h32 32v32 32h32 32v32 32h-32-32v32 32h32 32v32 32h-32-32v32 32h-32-32v-32-32h-32-32v32 32h-32-32v-32-32h-32-32v-32-32h32 32v-32-32h-32-32v-32-32h32 32v-32-32h32 32v32zm0 128v32h32 32v-32-32h-32-32v32z"></path></svg></p>
-            </div>
-          </div>
-        <div class="container right">
-            <div class="content">
-              <h2>2001-2006</h2>
-              <p>Bryant & Stratton College | Technology Coordinator</p>
-            </div>
-          </div>
-          <div class="container left">
-            <div class="content">
-              <h2>1999-2001</h2>
-              <p>CC Plus | Computer Consultant</p>
-            </div>
-          </div>
-
-      </div>
-    <hr>
-    <h4 id="fun"><b>Fun Stuff</b></h4><br>
-    <img id="switch" src="switch.png"/ style="width:405px;">
-
-    <div id="tv_container" style="padding:5px;">
-        <video muted autoplay loop width="280" height="240">
-            <source src="trailer.mp4" type="video/mp4" />            </video>
-            <p>This is a brief trailer of the game I've been developing as a bit of a side hobby.
-              I'm using Unity with C# for the deveopment and GIMP to create or modify the sprites.
-            </p>
-
-          </div>
-    <style>
-        #tv_container {
-            width: 300px; /* Adjust TV image width */
-            height: 100px; /* Adjust TV image height */
-            position: relative;
-        }
-        #tv_container video {
-            position: absolute;
-            top: -205px; /* Adjust top position */
-            left: 63px; /* Adjust left position */
-        }
-        </style>
-        <hr><br>
-        <h4>-More Fun-</h4>
-        <p><a href="https://dphanksjr.github.io/portfolio/funstuff/index.html" target="_blank">Fun with CSS</p></a>
-        <p>Time Wasting Games:<br> <a href="https://dphanksjr.github.io/main/games/quickBlocks/" target="_blank">Quick Blocks</a>|<a href="https://dphanksjr.github.io/main/games/fall/" target="_blank">Celestial Stars</a>|<a href="https://dphanksjr.github.io/main/games/arrows/" target="_blank">Castle Siege</a>
-        <p>Educational Games:<br><a href="https://dphanksjr.github.io/main/games/spanish/" target="_blank">Spanish Quiz</a>|<a href="https://dphanksjr.github.io/main/games/math/" target="_blank">Math Quiz</a>|<a href="https://dphanksjr.github.io/main/games/questions" target="_blank">Language Quiz</a>
-        <p><a href="https://dphanksjr.github.io/portfolio/games/animation/index.html" target="_blank">Animation Demo</p></a>
-        <p><a href="https://dphanksjr.github.io/portfolio/games/parallel/index.html" target="_blank">Parallel Scrolling Demo</p></a>
-        <p><a href="https://dphanksjr.github.io/portfolio/games/shootergame/index.html" target="_blank">Simple Crow shooting game</p></a>
-   <!--  <div class="row">
-      <div class="column python django html js w3-row-padding">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/images/library.png" alt="Avatar" style="width:350px;height:300px;">
-                </div>
-                <div class="flip-card-back">
-                  <h4>Syracuse University Libraries website</h4> 
-                  <p><a href="https://library.syracuse.edu/" target="_blank" >Click for site</a></p> 
-                  
-                </div>
-              </div>
-            </div>
-      </div>
-  
-      <div class="column python django html js w3-row-padding">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/images/django.png" alt="Avatar" style="width:350px;height:300px;">
-                </div>
-                <div class="flip-card-back">
-                  <h4>Django Portfolio</h4> 
-                  <p><a href="http://dphanksjr.pythonanywhere.com/" target="_blank" >Click for site</a></p> 
-                 <p>An example of how you can use machine learning and bio inspired python scripts in Django.</p>
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="column python django html js w3-row-padding">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/images/api.png" alt="Avatar" style="width:350px;height:300px;">
-                </div>
-                <div class="flip-card-back">
-                  <h4>Django Example Project Portfolio</h4> 
-                  <p>This site uses the Django REST API.
-                    The first site is the django site.  The second is a regular html site thats using the Django REST API to display the projects.
-                  </p>
-                  <p><a href="http://dhanksjr.pythonanywhere.com/" target="_blank" >Click for Django site.</a></p> 
-                  <p><a href="https://dphanksjr.github.io/portfolio/frontend/projects-list.html" target="_blank" >Click for REST API site.</a></p> 
-  
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="column PHP WordPress html js w3-row-padding">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/images/soundbeat.png" alt="Avatar" style="width:350px;height:300px;">
-                </div>
-                <div class="flip-card-back">
-                  <h4>Sound Beat</h4> 
-                  <p><a href="https://soundbeat.org" target="_blank" >Click to see the site.</a></p> 
-                  <p>The site shown here is regular WordPress site I built.  This site also offers a RESTful API where people can use a regular html built site to login and download music that is offered by Sound Beat.  I also had to build my own child theme for this site.</p>
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="column WordPress HTML w3-row-padding">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/images/demonkid.jpg" alt="Avatar" style="width:350px;height:300px;">
-                </div>
-                <div class="flip-card-back">
-                  <h4>DemonKid</h4> 
-                  <p>This is site meant to promote an upcoming game I build in Unity.  The game isn't ready to go live yet so this site is local.  It uses the elementor plughin.</p> 
-                </div>
-              </div>
-            </div>
-      </div>
-      <div class="column WordPress HTML w3-row-padding">
-          <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/images/elementor4.png" alt="Avatar" style="width:350px;height:300px;">
-                </div>
-                <div class="flip-card-back">
-                  <h4>Elementor Demo</h4> 
-                  <p>Another WordPress site utilizing the elementor plugin.  This is also local only.</p> 
-                </div>
-              </div>
-            </div>
-      </div>
-  
-    
-    </div>-->
-
-    <hr>
-
-  <!-- Contact Section 
-  <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Contact Me</b></h4>
-    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-        <p>email@email.com</p>
-      </div>
-
-    </div>
-    <hr class="w3-opacity">
-
-  </div>-->
-
-  <!-- Footer 
-  <footer class="w3-container w3-padding-32 w3-dark-grey">
-
-  </div>
-  </footer>-->
-  
-  <div id="rabbit" class="w3-black w3-center w3-padding-24"></div>
-
-<!-- End page content -->
-</div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-<script>
-    filterSelection("all")
-    function filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("column");
-      if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section - Mordor Design Portfolio</title>
+  <style>
+    /* General Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
-    function w3AddClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-      }
+
+    body, html {
+      height: 100%;
+      font-family: 'Cinzel', serif; /* Use a medieval or strong serif font */
+      background-color: #000;
+      color: white;
+      overflow: hidden;
     }
-    
-    function w3RemoveClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);     
-        }
-      }
-      element.className = arr1.join(" ");
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/hero-bg.webp') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
-    
-    </script>
-    <script>
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var y = 0; y < btns.length; y++) {
-      btns[y].addEventListener("click", function(){
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Adds a dark overlay */
     }
-    </script>
-    <script>
-        var z = 0;
-      //  var txt = 'Lorem ipsum dummy text blabla.';
-        var txt = 'I am a "seasoned" <!--I so enjoy that word as a descriptor of a person--> IT professional with a broad knowledge of hardware, software, and networking technologies. I consider myself proficient in application, web and database design, development and programming. Others may disagree. 🙂 I also offer some Data Science experience having dabbled in extracting and analyzing data, turning it into useful information and then visualizing it. I also enjoy game development and all things within the game industry in general.'; /* The text */
-        var speed = 70;
-       
-        function typeWriter() {
-          if (z < txt.length) {
-            document.getElementById("about_me").innerHTML += txt.charAt(z);
-            z++;
-            setTimeout(typeWriter, speed);
-          }
-        }
 
-        </script>
-        <script>
-            var i = 0;
-            var j = 0;
-            var k = 0;
-            var l = 0;
+    .hero h1 {
+      font-size: 4rem;
+      z-index: 2;
+      color: #f0e68c; /* Glowing gold-like color */
+      text-shadow: 2px 2px 8px rgba(255, 69, 0, 0.8); /* Fiery glow effect */
+      letter-spacing: 2px;
+    }
 
-            function move() {
-              if (i == 0) {
-                i = 1;
-                var elem = document.getElementById("myBar");
-                var width = 1;
-                var id = setInterval(frame, 10);
-                function frame() {
-                  if (width >= 95) {
-                    clearInterval(id);
-                    i = 0;
-                  } else {
-                    width++;
-                    elem.style.width = width + "%";
+    .hero p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      z-index: 2;
+      color: #ddd;
+      letter-spacing: 1px;
+    }
 
-                  }
-                }
-              }
-            }
-            function move2() {
-              if (j == 0) {
-                j = 1;
-                var elem2 = document.getElementById("myBar2");
-                var width = 1;
-                var id = setInterval(frame, 10);
-                function frame() {
-                  if (width >= 85) {
-                    clearInterval(id);
-                    j = 0;
-                  } else {
-                    width++;
-                    elem2.style.width = width + "%";
+    /* Call to Action Button */
+    .cta {
+      background: #ff4500;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Subtle glow */
+      transition: all 0.3s ease;
+    }
 
-                  }
-                }
-              }
-            }
-            function move3() {
-              if (k == 0) {
-                k = 1;
-                var elem3 = document.getElementById("myBar3");
-                var width = 1;
-                var id = setInterval(frame, 10);
-                function frame() {
-                  if (width >= 80) {
-                    clearInterval(id);
-                    k = 0;
-                  } else {
-                    width++;
-                    elem3.style.width = width + "%";
+    .cta:hover {
+      box-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Intensify glow */
+      background-color: #ff6347;
+    }
 
-                  }
-                }
-              }
-            }
-            function move4() {
-              if (l == 0) {
-                l = 1;
-                var elem4 = document.getElementById("myBar4");
-                var width = 1;
-                var id = setInterval(frame, 10);
-                function frame() {
-                  if (width >= 75) {
-                    clearInterval(id);
-                    l = 0;
-                  } else {
-                    width++;
-                    elem4.style.width = width + "%";
+    /* Subtle Ember Animation */
+    .embers {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('embers.png') repeat;
+      animation: drift 10s infinite linear;
+      opacity: 0.3;
+      z-index: 1;
+    }
 
-                  }
-                }
-              }
-            }
-            </script>
-        <script>
-            function start(){
-                
-               move();
-               move2();
-               move3();
-               move4();
-               typeWriter();
-            }
-        </script>
+    @keyframes drift {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
 
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="embers"></div>
+    <h1>Unleash the Power of Design</h1>
+    <p>Forging Digital Masterpieces with the Fire of Creativity</p>
+    <button class="cta"><a href=portfolio.html>Enter the Forge</a></button>
+  </section>
 
 </body>
 </html>
